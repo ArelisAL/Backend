@@ -200,6 +200,8 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "API Fran-Costuras",
     "DESCRIPTION": "API REST del taller Fran-Costuras (v1.4) — DERCAS §7.2.",
     "VERSION": "1.0.0",
+    # Pedido.estado e HistorialEstado comparten el mismo conjunto de estados.
+    "ENUM_NAME_OVERRIDES": {"EstadoPedidoEnum": "pedidos.models.Pedido.ESTADOS"},
 }
 
 CORS_ALLOWED_ORIGINS = _env_list(

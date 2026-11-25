@@ -95,13 +95,14 @@ class AnularPagoView(APIView):
     permission_classes = [EsAdministradora]
 
     @extend_schema(
+        request=None,
         responses={
             200: PagoConSaldoSerializer,
             400: OpenApiResponse(description="Pago ya anulado"),
             401: OpenApiResponse(description="Token JWT inválido o ausente"),
             403: OpenApiResponse(description="Solo administradora"),
             404: OpenApiResponse(description="Pago inexistente"),
-        }
+        },
     )
     def post(self, request, pago_id):
         try:

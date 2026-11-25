@@ -64,7 +64,7 @@ class PedidoSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = fields
 
-    def get_medidas_ultima_toma(self, pedido):
+    def get_medidas_ultima_toma(self, pedido) -> dict | None:
         from . import services
 
         toma = services.ultimas_medidas(pedido)

@@ -24,7 +24,7 @@ class TelaSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ["id", "stock_bajo"]
 
-    def get_stock_bajo(self, tela):
+    def get_stock_bajo(self, tela) -> bool:
         return tela.metros_disponibles <= tela.stock_minimo
 
 
