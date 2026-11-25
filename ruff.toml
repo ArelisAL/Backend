@@ -1,0 +1,10 @@
+# Configuración de ruff (AGENTS.md §2: lint y formato del Backend).
+target-version = "py312"
+line-length = 88
+# Las migraciones las genera Django: no se editan a mano.
+extend-exclude = ["*/migrations/*"]
+
+[lint]
+# RUF012: en Django, Meta.ordering, choices, permission_classes, etc. son
+# atributos de clase por diseño del framework (falsos positivos).
+extend-ignore = ["RUF012"]

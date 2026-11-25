@@ -1,0 +1,2667 @@
+[
+  {
+    "model": "catalogo.categoriamedida",
+    "pk": 1,
+    "fields": {
+      "nombre": "MUJER"
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 1,
+    "fields": {
+      "codigo": "contorno_busto",
+      "nombre": "Contorno de busto",
+      "como_se_toma": "Alrededor de la parte más prominente del busto.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 2,
+    "fields": {
+      "codigo": "contorno_busto_alto",
+      "nombre": "Contorno de busto alto",
+      "como_se_toma": "Por encima del busto, debajo de las axilas.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 3,
+    "fields": {
+      "codigo": "contorno_bajo_busto",
+      "nombre": "Contorno de bajo busto",
+      "como_se_toma": "Debajo del busto.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 4,
+    "fields": {
+      "codigo": "contorno_cintura",
+      "nombre": "Contorno de cintura",
+      "como_se_toma": "En la parte más estrecha del torso o cintura natural.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 5,
+    "fields": {
+      "codigo": "contorno_cadera",
+      "nombre": "Contorno de cadera",
+      "como_se_toma": "Por la parte más prominente de glúteos y cadera.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 6,
+    "fields": {
+      "codigo": "contorno_cadera_alta",
+      "nombre": "Contorno de cadera alta",
+      "como_se_toma": "Alrededor de la parte superior de la cadera.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 7,
+    "fields": {
+      "codigo": "ancho_espalda",
+      "nombre": "Ancho de espalda",
+      "como_se_toma": "De un extremo al otro de la espalda, entre puntos de hombro.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 8,
+    "fields": {
+      "codigo": "ancho_pecho",
+      "nombre": "Ancho de pecho",
+      "como_se_toma": "Entre los puntos de unión de los brazos, por la parte frontal.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 9,
+    "fields": {
+      "codigo": "ancho_hombros",
+      "nombre": "Ancho de hombros",
+      "como_se_toma": "Desde la base de un hombro hasta la del otro.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 10,
+    "fields": {
+      "codigo": "largo_talle_delantero",
+      "nombre": "Largo de talle delantero",
+      "como_se_toma": "Desde el hombro, junto al cuello, hasta la cintura pasando por el busto.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 11,
+    "fields": {
+      "codigo": "largo_talle_espalda",
+      "nombre": "Largo de talle espalda",
+      "como_se_toma": "Desde la base del cuello hasta la cintura por la espalda.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 12,
+    "fields": {
+      "codigo": "separacion_busto",
+      "nombre": "Separación de busto",
+      "como_se_toma": "Distancia entre los dos puntos de busto.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 13,
+    "fields": {
+      "codigo": "altura_busto",
+      "nombre": "Altura de busto",
+      "como_se_toma": "Desde la base del cuello o hombro hasta el punto de busto.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 14,
+    "fields": {
+      "codigo": "largo_total",
+      "nombre": "Largo total",
+      "como_se_toma": "Desde el punto más alto del hombro hasta el largo deseado de la prenda.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 15,
+    "fields": {
+      "codigo": "contorno_cuello",
+      "nombre": "Contorno de cuello",
+      "como_se_toma": "Alrededor de la base del cuello.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 16,
+    "fields": {
+      "codigo": "contorno_brazo",
+      "nombre": "Contorno de brazo",
+      "como_se_toma": "Alrededor de la parte más gruesa del brazo.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 17,
+    "fields": {
+      "codigo": "contorno_codo",
+      "nombre": "Contorno de codo",
+      "como_se_toma": "Alrededor del codo ligeramente flexionado.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 18,
+    "fields": {
+      "codigo": "contorno_muneca",
+      "nombre": "Contorno de muñeca",
+      "como_se_toma": "Alrededor de la muñeca.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 19,
+    "fields": {
+      "codigo": "largo_manga",
+      "nombre": "Largo de manga",
+      "como_se_toma": "Desde el hombro hasta la muñeca, con el brazo ligeramente flexionado.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 20,
+    "fields": {
+      "codigo": "largo_brazo",
+      "nombre": "Largo de brazo",
+      "como_se_toma": "Desde el hombro hasta la muñeca.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 21,
+    "fields": {
+      "codigo": "contorno_muslo",
+      "nombre": "Contorno de muslo",
+      "como_se_toma": "Alrededor de la parte más gruesa del muslo.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 22,
+    "fields": {
+      "codigo": "contorno_rodilla",
+      "nombre": "Contorno de rodilla",
+      "como_se_toma": "Alrededor de la rodilla.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 23,
+    "fields": {
+      "codigo": "contorno_pantorrilla",
+      "nombre": "Contorno de pantorrilla",
+      "como_se_toma": "Alrededor de la parte más gruesa de la pantorrilla.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 24,
+    "fields": {
+      "codigo": "contorno_tobillo",
+      "nombre": "Contorno de tobillo",
+      "como_se_toma": "Alrededor del tobillo.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 25,
+    "fields": {
+      "codigo": "largo_entrepierna",
+      "nombre": "Largo de entrepierna",
+      "como_se_toma": "Desde la entrepierna hasta el tobillo o largo deseado.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 26,
+    "fields": {
+      "codigo": "largo_exterior_pierna",
+      "nombre": "Largo exterior de pierna",
+      "como_se_toma": "Desde la cintura hasta el tobillo por el costado.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 27,
+    "fields": {
+      "codigo": "tiro_delantero",
+      "nombre": "Tiro delantero",
+      "como_se_toma": "Desde la cintura delantera hasta la entrepierna.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 28,
+    "fields": {
+      "codigo": "tiro_trasero",
+      "nombre": "Tiro trasero",
+      "como_se_toma": "Desde la cintura trasera hasta la entrepierna.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 29,
+    "fields": {
+      "codigo": "altura_cadera",
+      "nombre": "Altura de cadera",
+      "como_se_toma": "Desde la cintura hasta la parte más prominente de la cadera, por el costado.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 30,
+    "fields": {
+      "codigo": "largo_desde_cintura",
+      "nombre": "Largo desde cintura",
+      "como_se_toma": "Desde la cintura hasta el largo deseado de la falda o el short.",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 31,
+    "fields": {
+      "codigo": "contorno_bota",
+      "nombre": "Contorno de bota",
+      "como_se_toma": "Ancho deseado en la parte inferior del pantalón o short (se toma alrededor del pie o tobillo como referencia).",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 32,
+    "fields": {
+      "codigo": "largo_abertura",
+      "nombre": "Largo de abertura",
+      "como_se_toma": "Largo deseado de la abertura de la falda, desde el borde inferior hacia arriba (solo si lleva).",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.categoriamedida",
+    "pk": 2,
+    "fields": {
+      "nombre": "HOMBRE"
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 33,
+    "fields": {
+      "codigo": "contorno_cuello",
+      "nombre": "Contorno de cuello",
+      "como_se_toma": "Alrededor de la base del cuello.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 34,
+    "fields": {
+      "codigo": "contorno_pecho",
+      "nombre": "Contorno de pecho",
+      "como_se_toma": "Alrededor del pecho, por debajo de las axilas.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 35,
+    "fields": {
+      "codigo": "contorno_cintura",
+      "nombre": "Contorno de cintura",
+      "como_se_toma": "Alrededor de la cintura natural o donde se usa el pantalón.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 36,
+    "fields": {
+      "codigo": "contorno_abdomen",
+      "nombre": "Contorno de abdomen",
+      "como_se_toma": "Alrededor de la parte más prominente del abdomen, si se requiere.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 37,
+    "fields": {
+      "codigo": "contorno_cadera",
+      "nombre": "Contorno de cadera",
+      "como_se_toma": "Alrededor de la parte más amplia de la cadera y glúteos.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 38,
+    "fields": {
+      "codigo": "ancho_espalda",
+      "nombre": "Ancho de espalda",
+      "como_se_toma": "De hombro a hombro por la espalda.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 39,
+    "fields": {
+      "codigo": "ancho_hombros",
+      "nombre": "Ancho de hombros",
+      "como_se_toma": "De extremo a extremo de los hombros.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 40,
+    "fields": {
+      "codigo": "largo_talle_delantero",
+      "nombre": "Largo de talle delantero",
+      "como_se_toma": "Desde el hombro, junto al cuello, hasta la cintura delantera.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 41,
+    "fields": {
+      "codigo": "largo_talle_espalda",
+      "nombre": "Largo de talle espalda",
+      "como_se_toma": "Desde la base del cuello hasta la cintura por la espalda.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 42,
+    "fields": {
+      "codigo": "largo_camisa",
+      "nombre": "Largo de camisa",
+      "como_se_toma": "Desde la base del cuello hasta el largo deseado.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 43,
+    "fields": {
+      "codigo": "contorno_brazo",
+      "nombre": "Contorno de brazo",
+      "como_se_toma": "Alrededor de la parte más gruesa del brazo.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 44,
+    "fields": {
+      "codigo": "contorno_codo",
+      "nombre": "Contorno de codo",
+      "como_se_toma": "Alrededor del codo flexionado.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 45,
+    "fields": {
+      "codigo": "contorno_muneca",
+      "nombre": "Contorno de muñeca",
+      "como_se_toma": "Alrededor de la muñeca. Se usa también para el puño.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 46,
+    "fields": {
+      "codigo": "largo_manga",
+      "nombre": "Largo de manga",
+      "como_se_toma": "Desde el hombro hasta la muñeca.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 47,
+    "fields": {
+      "codigo": "largo_brazo",
+      "nombre": "Largo de brazo",
+      "como_se_toma": "Desde el hombro hasta la muñeca con el brazo flexionado ligeramente.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 48,
+    "fields": {
+      "codigo": "contorno_muslo",
+      "nombre": "Contorno de muslo",
+      "como_se_toma": "Alrededor de la parte más gruesa del muslo.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 49,
+    "fields": {
+      "codigo": "contorno_rodilla",
+      "nombre": "Contorno de rodilla",
+      "como_se_toma": "Alrededor de la rodilla.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 50,
+    "fields": {
+      "codigo": "contorno_pantorrilla",
+      "nombre": "Contorno de pantorrilla",
+      "como_se_toma": "Alrededor de la parte más gruesa de la pantorrilla.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 51,
+    "fields": {
+      "codigo": "contorno_tobillo",
+      "nombre": "Contorno de tobillo",
+      "como_se_toma": "Alrededor del tobillo.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 52,
+    "fields": {
+      "codigo": "largo_entrepierna",
+      "nombre": "Largo de entrepierna",
+      "como_se_toma": "Desde la entrepierna hasta el tobillo.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 53,
+    "fields": {
+      "codigo": "largo_exterior",
+      "nombre": "Largo exterior",
+      "como_se_toma": "Desde la cintura o cadera hasta el tobillo por el costado.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 54,
+    "fields": {
+      "codigo": "tiro_delantero",
+      "nombre": "Tiro delantero",
+      "como_se_toma": "Desde la cintura delantera hasta la entrepierna.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 55,
+    "fields": {
+      "codigo": "tiro_trasero",
+      "nombre": "Tiro trasero",
+      "como_se_toma": "Desde la cintura trasera hasta la entrepierna.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 56,
+    "fields": {
+      "codigo": "contorno_bota",
+      "nombre": "Contorno de bota",
+      "como_se_toma": "Alrededor de la parte inferior del pantalón.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 57,
+    "fields": {
+      "codigo": "largo_total",
+      "nombre": "Largo total",
+      "como_se_toma": "Desde la base del cuello hasta el largo deseado del saco, sudadera o chaleco.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 58,
+    "fields": {
+      "codigo": "largo_desde_cintura",
+      "nombre": "Largo desde cintura",
+      "como_se_toma": "Desde la cintura hasta el largo deseado del short o bermuda.",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.categoriamedida",
+    "pk": 3,
+    "fields": {
+      "nombre": "NINO"
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 59,
+    "fields": {
+      "codigo": "estatura",
+      "nombre": "Estatura",
+      "como_se_toma": "Desde la cabeza hasta los pies, de pie y recto.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 60,
+    "fields": {
+      "codigo": "contorno_cabeza",
+      "nombre": "Contorno de cabeza",
+      "como_se_toma": "Alrededor de la parte más amplia de la cabeza, para capuchas y gorros.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 61,
+    "fields": {
+      "codigo": "contorno_cuello",
+      "nombre": "Contorno de cuello",
+      "como_se_toma": "Alrededor de la base del cuello.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 62,
+    "fields": {
+      "codigo": "contorno_pecho",
+      "nombre": "Contorno de pecho",
+      "como_se_toma": "Alrededor del pecho, debajo de las axilas.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 63,
+    "fields": {
+      "codigo": "contorno_cintura",
+      "nombre": "Contorno de cintura",
+      "como_se_toma": "Alrededor de la cintura natural.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 64,
+    "fields": {
+      "codigo": "contorno_abdomen",
+      "nombre": "Contorno de abdomen",
+      "como_se_toma": "Alrededor de la parte más prominente del abdomen.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 65,
+    "fields": {
+      "codigo": "contorno_cadera",
+      "nombre": "Contorno de cadera",
+      "como_se_toma": "Alrededor de la parte más amplia de cadera y glúteos.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 66,
+    "fields": {
+      "codigo": "ancho_hombros",
+      "nombre": "Ancho de hombros",
+      "como_se_toma": "De un extremo del hombro al otro.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 67,
+    "fields": {
+      "codigo": "ancho_espalda",
+      "nombre": "Ancho de espalda",
+      "como_se_toma": "De un lado al otro de la espalda.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 68,
+    "fields": {
+      "codigo": "largo_talle_delantero",
+      "nombre": "Largo de talle delantero",
+      "como_se_toma": "Desde el hombro junto al cuello hasta la cintura.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 69,
+    "fields": {
+      "codigo": "largo_talle_espalda",
+      "nombre": "Largo de talle espalda",
+      "como_se_toma": "Desde la base del cuello hasta la cintura por la espalda.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 70,
+    "fields": {
+      "codigo": "largo_prenda",
+      "nombre": "Largo de prenda",
+      "como_se_toma": "Desde el hombro hasta el largo deseado.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 71,
+    "fields": {
+      "codigo": "contorno_brazo",
+      "nombre": "Contorno de brazo",
+      "como_se_toma": "Alrededor de la parte más gruesa del brazo.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 72,
+    "fields": {
+      "codigo": "largo_manga",
+      "nombre": "Largo de manga",
+      "como_se_toma": "Desde el hombro hasta la muñeca.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 73,
+    "fields": {
+      "codigo": "contorno_muneca",
+      "nombre": "Contorno de muñeca",
+      "como_se_toma": "Alrededor de la muñeca. Se usa también para el puño.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 74,
+    "fields": {
+      "codigo": "contorno_muslo",
+      "nombre": "Contorno de muslo",
+      "como_se_toma": "Alrededor de la parte más gruesa del muslo. Se usa también como contorno de pierna.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 75,
+    "fields": {
+      "codigo": "contorno_rodilla",
+      "nombre": "Contorno de rodilla",
+      "como_se_toma": "Alrededor de la rodilla.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 76,
+    "fields": {
+      "codigo": "contorno_pantorrilla",
+      "nombre": "Contorno de pantorrilla",
+      "como_se_toma": "Alrededor de la parte más gruesa de la pantorrilla.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 77,
+    "fields": {
+      "codigo": "contorno_tobillo",
+      "nombre": "Contorno de tobillo",
+      "como_se_toma": "Alrededor del tobillo.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 78,
+    "fields": {
+      "codigo": "tiro_delantero",
+      "nombre": "Tiro delantero",
+      "como_se_toma": "Desde la cintura delantera hasta la entrepierna.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 79,
+    "fields": {
+      "codigo": "tiro_trasero",
+      "nombre": "Tiro trasero",
+      "como_se_toma": "Desde la cintura trasera hasta la entrepierna.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 80,
+    "fields": {
+      "codigo": "largo_entrepierna",
+      "nombre": "Largo de entrepierna",
+      "como_se_toma": "Desde la entrepierna hasta el tobillo.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 81,
+    "fields": {
+      "codigo": "largo_exterior",
+      "nombre": "Largo exterior",
+      "como_se_toma": "Desde la cintura hasta el tobillo por el costado.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 82,
+    "fields": {
+      "codigo": "separacion_busto",
+      "nombre": "Separación de busto",
+      "como_se_toma": "Solo si se confecciona una prenda para niñas que lo requiera según su desarrollo y diseño.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 83,
+    "fields": {
+      "codigo": "altura_cadera",
+      "nombre": "Altura de cadera",
+      "como_se_toma": "Desde la cintura hasta la parte más prominente de la cadera, por el costado.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 84,
+    "fields": {
+      "codigo": "largo_desde_cintura",
+      "nombre": "Largo desde cintura",
+      "como_se_toma": "Desde la cintura hasta el largo deseado de la falda.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 85,
+    "fields": {
+      "codigo": "contorno_bota",
+      "nombre": "Contorno de bota",
+      "como_se_toma": "Alrededor de la parte inferior del pantalón.",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.categoriamedida",
+    "pk": 4,
+    "fields": {
+      "nombre": "BEBE"
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 86,
+    "fields": {
+      "codigo": "estatura",
+      "nombre": "Estatura",
+      "como_se_toma": "Desde la cabeza hasta los pies.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 87,
+    "fields": {
+      "codigo": "contorno_cabeza",
+      "nombre": "Contorno de cabeza",
+      "como_se_toma": "Alrededor de la cabeza.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 88,
+    "fields": {
+      "codigo": "contorno_cuello",
+      "nombre": "Contorno de cuello",
+      "como_se_toma": "En la base del cuello.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 89,
+    "fields": {
+      "codigo": "contorno_pecho",
+      "nombre": "Contorno de pecho",
+      "como_se_toma": "Alrededor del pecho.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 90,
+    "fields": {
+      "codigo": "contorno_cintura",
+      "nombre": "Contorno de cintura",
+      "como_se_toma": "Alrededor de la cintura.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 91,
+    "fields": {
+      "codigo": "contorno_cadera",
+      "nombre": "Contorno de cadera",
+      "como_se_toma": "Alrededor de la cadera y pañal.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 92,
+    "fields": {
+      "codigo": "largo_torso",
+      "nombre": "Largo de torso",
+      "como_se_toma": "Desde el hombro hasta la entrepierna.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 93,
+    "fields": {
+      "codigo": "largo_total",
+      "nombre": "Largo total",
+      "como_se_toma": "Desde el hombro hasta los pies o largo de diseño.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 94,
+    "fields": {
+      "codigo": "largo_manga",
+      "nombre": "Largo de manga",
+      "como_se_toma": "Desde el hombro hasta la mano o muñeca.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 95,
+    "fields": {
+      "codigo": "contorno_brazo",
+      "nombre": "Contorno de brazo",
+      "como_se_toma": "Alrededor de la parte más gruesa del brazo.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 96,
+    "fields": {
+      "codigo": "contorno_muneca",
+      "nombre": "Contorno de muñeca",
+      "como_se_toma": "Alrededor de la muñeca.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 97,
+    "fields": {
+      "codigo": "contorno_pierna",
+      "nombre": "Contorno de pierna",
+      "como_se_toma": "Alrededor de la abertura de la pierna.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 98,
+    "fields": {
+      "codigo": "largo_entrepierna",
+      "nombre": "Largo de entrepierna",
+      "como_se_toma": "Desde la entrepierna hasta el pie o tobillo.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.tipomedida",
+    "pk": 99,
+    "fields": {
+      "codigo": "largo_pie",
+      "nombre": "Largo de pie",
+      "como_se_toma": "Desde el talón hasta la punta del pie, para prendas que cubren los pies.",
+      "categoria": 4
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 1,
+    "fields": {
+      "codigo": "blusas_camisas",
+      "nombre": "Blusas y camisas",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 1,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 1,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 2,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 3,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 9,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 4,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 15,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 5,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 7,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 6,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 10,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 7,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 11,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 8,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 14,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 9,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 19,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 10,
+    "fields": {
+      "prenda": 1,
+      "tipo_medida": 16,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 2,
+    "fields": {
+      "codigo": "vestidos",
+      "nombre": "Vestidos",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 11,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 1,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 12,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 3,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 13,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 14,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 5,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 15,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 12,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 16,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 13,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 17,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 10,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 18,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 11,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 19,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 14,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 20,
+    "fields": {
+      "prenda": 2,
+      "tipo_medida": 19,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 3,
+    "fields": {
+      "codigo": "faldas",
+      "nombre": "Faldas",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 21,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 22,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 5,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 23,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 6,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 24,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 29,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 25,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 30,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 26,
+    "fields": {
+      "prenda": 3,
+      "tipo_medida": 32,
+      "opcional": true
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 4,
+    "fields": {
+      "codigo": "pantalones",
+      "nombre": "Pantalones",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 27,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 28,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 5,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 29,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 27,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 30,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 28,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 31,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 25,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 32,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 26,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 33,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 21,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 34,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 22,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 35,
+    "fields": {
+      "prenda": 4,
+      "tipo_medida": 31,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 5,
+    "fields": {
+      "codigo": "chaquetas_blazers",
+      "nombre": "Chaquetas y blazers",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 36,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 1,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 37,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 38,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 5,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 39,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 9,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 40,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 7,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 41,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 14,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 42,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 19,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 43,
+    "fields": {
+      "prenda": 5,
+      "tipo_medida": 16,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 6,
+    "fields": {
+      "codigo": "shorts",
+      "nombre": "Shorts",
+      "categoria": 1
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 44,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 4,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 45,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 5,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 46,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 27,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 47,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 28,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 48,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 21,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 49,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 25,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 50,
+    "fields": {
+      "prenda": 6,
+      "tipo_medida": 30,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 7,
+    "fields": {
+      "codigo": "camisas",
+      "nombre": "Camisas",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 51,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 33,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 52,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 34,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 53,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 54,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 39,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 55,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 38,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 56,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 42,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 57,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 46,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 58,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 43,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 59,
+    "fields": {
+      "prenda": 7,
+      "tipo_medida": 45,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 8,
+    "fields": {
+      "codigo": "pantalones",
+      "nombre": "Pantalones",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 60,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 61,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 37,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 62,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 36,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 63,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 54,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 64,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 55,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 65,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 48,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 66,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 49,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 67,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 52,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 68,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 53,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 69,
+    "fields": {
+      "prenda": 8,
+      "tipo_medida": 56,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 9,
+    "fields": {
+      "codigo": "sacos_blazers",
+      "nombre": "Sacos y blazers",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 70,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 34,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 71,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 72,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 36,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 73,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 37,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 74,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 39,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 75,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 38,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 76,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 57,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 77,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 46,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 78,
+    "fields": {
+      "prenda": 9,
+      "tipo_medida": 43,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 10,
+    "fields": {
+      "codigo": "sudaderas",
+      "nombre": "Sudaderas",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 79,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 34,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 80,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 81,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 37,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 82,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 39,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 83,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 57,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 84,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 46,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 85,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 45,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 86,
+    "fields": {
+      "prenda": 10,
+      "tipo_medida": 33,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 11,
+    "fields": {
+      "codigo": "shorts_bermudas",
+      "nombre": "Shorts y bermudas",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 87,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 88,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 37,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 89,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 48,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 90,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 54,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 91,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 55,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 92,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 52,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 93,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 58,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 94,
+    "fields": {
+      "prenda": 11,
+      "tipo_medida": 56,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 12,
+    "fields": {
+      "codigo": "chalecos",
+      "nombre": "Chalecos",
+      "categoria": 2
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 95,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 34,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 96,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 35,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 97,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 36,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 98,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 38,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 99,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 39,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 100,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 40,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 101,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 41,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 102,
+    "fields": {
+      "prenda": 12,
+      "tipo_medida": 57,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 13,
+    "fields": {
+      "codigo": "camisetas",
+      "nombre": "Camisetas",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 103,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 59,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 104,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 105,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 106,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 66,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 107,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 108,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 109,
+    "fields": {
+      "prenda": 13,
+      "tipo_medida": 61,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 14,
+    "fields": {
+      "codigo": "camisas",
+      "nombre": "Camisas",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 110,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 61,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 111,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 112,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 113,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 66,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 114,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 67,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 115,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 116,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 117,
+    "fields": {
+      "prenda": 14,
+      "tipo_medida": 73,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 15,
+    "fields": {
+      "codigo": "vestidos",
+      "nombre": "Vestidos",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 118,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 119,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 120,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 121,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 66,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 122,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 68,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 123,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 69,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 124,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 125,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 126,
+    "fields": {
+      "prenda": 15,
+      "tipo_medida": 82,
+      "opcional": true
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 16,
+    "fields": {
+      "codigo": "faldas",
+      "nombre": "Faldas",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 127,
+    "fields": {
+      "prenda": 16,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 128,
+    "fields": {
+      "prenda": 16,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 129,
+    "fields": {
+      "prenda": 16,
+      "tipo_medida": 83,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 130,
+    "fields": {
+      "prenda": 16,
+      "tipo_medida": 84,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 17,
+    "fields": {
+      "codigo": "pantalones",
+      "nombre": "Pantalones",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 131,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 132,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 133,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 74,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 134,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 78,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 135,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 79,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 136,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 80,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 137,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 81,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 138,
+    "fields": {
+      "prenda": 17,
+      "tipo_medida": 85,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 18,
+    "fields": {
+      "codigo": "chaquetas",
+      "nombre": "Chaquetas",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 139,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 140,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 141,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 142,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 66,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 143,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 144,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 145,
+    "fields": {
+      "prenda": 18,
+      "tipo_medida": 71,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 19,
+    "fields": {
+      "codigo": "pijamas",
+      "nombre": "Pijamas",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 146,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 147,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 148,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 149,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 150,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 151,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 78,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 152,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 79,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 153,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 80,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 154,
+    "fields": {
+      "prenda": 19,
+      "tipo_medida": 81,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prenda",
+    "pk": 20,
+    "fields": {
+      "codigo": "overoles_enterizos",
+      "nombre": "Overoles y enterizos",
+      "categoria": 3
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 155,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 62,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 156,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 63,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 157,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 65,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 158,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 68,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 159,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 69,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 160,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 70,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 161,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 80,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 162,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 72,
+      "opcional": false
+    }
+  },
+  {
+    "model": "catalogo.prendamedida",
+    "pk": 163,
+    "fields": {
+      "prenda": 20,
+      "tipo_medida": 74,
+      "opcional": false
+    }
+  }
+]

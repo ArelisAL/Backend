@@ -1,0 +1,8 @@
+# Herramientas de desarrollo y calidad (AGENTS.md §2 y §10.1).
+# No se instalan en producción: Railway usa solo requirements.txt.
+-r requirements.txt
+pytest==9.2.0
+pytest-django==4.14.0
+pytest-cov==7.1.0
+ruff==0.17.6
+pip-audit==2.10.1

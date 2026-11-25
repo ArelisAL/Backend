@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class FlujoConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "flujo"
+    verbose_name = "Flujo de pedidos"

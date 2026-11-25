@@ -1,0 +1,23 @@
+# Archivos de entorno local (SECRET_KEY etc.) — nunca se commitean (AGENTS.md §8.4).
+.env
+.env.local
+
+# Entornos y dependencias
+.venv/
+__pycache__/
+*.py[cod]
+
+# Base de datos local (desarrollo, AGENTS.md §3)
+db.sqlite3
+*.sqlite3
+
+# Reportes de pruebas y de lint
+.pytest_cache/
+coverage.xml
+.coverage
+.coverage.*
+htmlcov/
+.ruff_cache/
+
+.vercel
+.env*
