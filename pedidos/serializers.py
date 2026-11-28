@@ -36,6 +36,9 @@ class PedidoSerializer(serializers.ModelSerializer):
     categoria_codigo = serializers.CharField(
         source="prenda.categoria.nombre", read_only=True
     )
+    categoria_nombre = serializers.CharField(
+        source="prenda.categoria.get_nombre_display", read_only=True
+    )
     costurera_nombre = serializers.CharField(
         source="costurera.nombre", read_only=True, allow_null=True
     )
@@ -51,6 +54,7 @@ class PedidoSerializer(serializers.ModelSerializer):
             "prenda",
             "prenda_nombre",
             "categoria_codigo",
+            "categoria_nombre",
             "descripcion",
             "fecha_entrega",
             "estado",
@@ -75,3 +79,18 @@ class PedidoSerializer(serializers.ModelSerializer):
             "fecha": toma.fecha,
             "categoria": toma.categoria.nombre,
         }
+
+
+class PedidoCostureraSerializer(PedidoSerializer):
+    """Pedido sin datos financieros: la costurera no ve totales (AGENTS.md §13.1)."""
+
+    class Meta(PedidoSerializer.Meta):
+        fields = [campo for campo in PedidoSerializer.Meta.fields if campo != "total"]
+        read_only_fields = fields
+
+
+def serializer_pedido_para(usuario):
+    """Elige la representación del pedido según el rol de quien consulta."""
+    if getattr(usuario, "rol", None) == "costurera":
+        return PedidoCostureraSerializer
+    return PedidoSerializer

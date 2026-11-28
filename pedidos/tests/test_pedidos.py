@@ -179,3 +179,35 @@ def test_api_mis_pedidos_solo_los_propios(datos):
     assert respuesta.status_code == 200
     codigos = [p["codigo"] for p in respuesta.json()["results"]]
     assert codigos == ["FC-0001"]
+
+
+def test_api_costurera_no_recibe_total_del_pedido(datos):
+    """Auditoría C4: la costurera no ve datos financieros (AGENTS.md §13.1)."""
+    crear_pedido(
+        "FC-0001", datos["cliente"], datos["blusa"], costurera=datos["costurera"]
+    )
+    cliente = _cliente_con_token(datos["costurera"])
+    respuestas = [
+        cliente.get("/api/v1/mis-pedidos/").json()["results"][0],
+        cliente.get("/api/v1/pedidos/").json()["results"][0],
+        cliente.get("/api/v1/pedidos/FC-0001/").json(),
+        cliente.patch(
+            "/api/v1/pedidos/FC-0001/notas/", {"nota_interna": "x"}, format="json"
+        ).json(),
+    ]
+    for pedido in respuestas:
+        assert pedido["codigo"] == "FC-0001"
+        assert "total" not in pedido
+
+
+def test_api_recepcionista_si_recibe_total_del_pedido(datos):
+    crear_pedido(
+        "FC-0001", datos["cliente"], datos["blusa"], costurera=datos["costurera"]
+    )
+    recepcion = crear_usuario("recep-total@fran-costuras.test", "recepcionista")
+    respuesta = _cliente_con_token(recepcion).get("/api/v1/pedidos/FC-0001/")
+    assert respuesta.status_code == 200
+    assert "total" in respuesta.json()
+    # Auditoría M8: nombre legible de la categoría además del código.
+    assert respuesta.json()["categoria_codigo"] == "MUJER"
+    assert respuesta.json()["categoria_nombre"] == "Mujer"

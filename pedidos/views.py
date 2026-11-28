@@ -18,7 +18,9 @@ from .serializers import (
     EditarNotaPedidoSerializer,
     EditarPedidoSerializer,
     FiltroPedidosSerializer,
+    PedidoCostureraSerializer,
     PedidoSerializer,
+    serializer_pedido_para,
 )
 
 
@@ -53,7 +55,7 @@ class PedidoListView(APIView):
         paginador = api_settings.DEFAULT_PAGINATION_CLASS()
         pagina = paginador.paginate_queryset(pedidos, request, view=self)
         return paginador.get_paginated_response(
-            PedidoSerializer(pagina, many=True).data
+            serializer_pedido_para(request.user)(pagina, many=True).data
         )
 
     @extend_schema(
@@ -87,7 +89,7 @@ class MisPedidosView(APIView):
 
     @extend_schema(
         parameters=[FiltroPedidosSerializer],
-        responses={200: PedidoSerializer(many=True)},
+        responses={200: PedidoCostureraSerializer(many=True)},
     )
     def get(self, request, *args, **kwargs):
         filtro = FiltroPedidosSerializer(data=request.query_params)
@@ -101,7 +103,7 @@ class MisPedidosView(APIView):
         paginador = api_settings.DEFAULT_PAGINATION_CLASS()
         pagina = paginador.paginate_queryset(pedidos, request, view=self)
         return paginador.get_paginated_response(
-            PedidoSerializer(pagina, many=True).data
+            serializer_pedido_para(request.user)(pagina, many=True).data
         )
 
 
@@ -121,7 +123,7 @@ class PedidoDetailView(APIView):
             )
         except PermissionError as exc:
             return _error("sin_permiso", str(exc), status.HTTP_403_FORBIDDEN)
-        return Response(PedidoSerializer(pedido).data)
+        return Response(serializer_pedido_para(request.user)(pedido).data)
 
     @extend_schema(
         request=EditarPedidoSerializer,
@@ -181,4 +183,4 @@ class PedidoNotaView(APIView):
             )
         except PermissionError as exc:
             return _error("sin_permiso", str(exc), status.HTTP_403_FORBIDDEN)
-        return Response(PedidoSerializer(pedido).data)
+        return Response(serializer_pedido_para(request.user)(pedido).data)
