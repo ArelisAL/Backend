@@ -15,10 +15,12 @@ class EsPersonalTaller(BasePermission):
 
 
 class PuedeCambiarEstado(BasePermission):
-    message = "Solo la administradora o la costurera puede cambiar el estado."
+    message = "No tienes permiso para cambiar el estado del pedido."
 
     def has_permission(self, request, view):
+        # La recepcionista solo marca «Entregado»; services.py valida la transición.
         return bool(
             request.user.is_authenticated
-            and getattr(request.user, "rol", None) in {"administradora", "costurera"}
+            and getattr(request.user, "rol", None)
+            in {"administradora", "recepcionista", "costurera"}
         )

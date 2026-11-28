@@ -27,8 +27,13 @@ class PedidoEstadoView(APIView):
             200: HistorialEstadoSerializer,
             400: OpenApiResponse(description="Transición inválida o sin confirmar"),
             401: OpenApiResponse(description="Token JWT inválido o ausente"),
-            403: OpenApiResponse(description="Pedido ajeno a la costurera"),
+            403: OpenApiResponse(
+                description="Pedido ajeno o transición no permitida para el rol"
+            ),
             404: OpenApiResponse(description="Pedido inexistente"),
+            409: OpenApiResponse(
+                description="Stock insuficiente o entrega con saldo pendiente"
+            ),
         },
     )
     def post(self, request, codigo: str, *args, **kwargs):
@@ -49,6 +54,8 @@ class PedidoEstadoView(APIView):
             return _error("sin_permiso", str(exc), status.HTTP_403_FORBIDDEN)
         except services.TransicionInvalida as exc:
             return _error("transicion_invalida", str(exc), status.HTTP_400_BAD_REQUEST)
+        except services.EntregaConSaldo as exc:
+            return _error("saldo_pendiente", str(exc), status.HTTP_409_CONFLICT)
         except inventario_services.StockInsuficiente as exc:
             return _error("stock_insuficiente", str(exc), status.HTTP_409_CONFLICT)
         except inventario_services.DatosInventarioInvalidos as exc:
