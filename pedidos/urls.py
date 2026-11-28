@@ -15,6 +15,21 @@ urlpatterns = [
         name="pedido_notas",
     ),
     path(
+        "pedidos/<str:codigo>/servicios/",
+        views.PedidoServiciosView.as_view(),
+        name="pedido_servicios",
+    ),
+    path(
+        "pedidos/<str:codigo>/servicios/<int:linea_id>/",
+        views.PedidoServicioDetalleView.as_view(),
+        name="pedido_servicio_detalle",
+    ),
+    path(
+        "pedidos/<str:codigo>/cerrar-total/",
+        views.PedidoCerrarTotalView.as_view(),
+        name="pedido_cerrar_total",
+    ),
+    path(
         "pedidos/<str:codigo>/",
         views.PedidoDetailView.as_view(),
         name="pedido_detail",

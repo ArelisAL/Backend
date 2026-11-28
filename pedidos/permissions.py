@@ -43,3 +43,13 @@ class EsCosturera(BasePermission):
             request.user.is_authenticated
             and getattr(request.user, "rol", None) == "costurera"
         )
+
+
+class EsRecepcionista(BasePermission):
+    message = "Solo la recepcionista puede cerrar el total del pedido."
+
+    def has_permission(self, request, view):
+        return bool(
+            request.user.is_authenticated
+            and getattr(request.user, "rol", None) == "recepcionista"
+        )

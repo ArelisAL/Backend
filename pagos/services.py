@@ -50,6 +50,8 @@ def registrar_pago(codigo: str, monto, usuario) -> tuple[Pago, Decimal]:
     monto = _monto_positivo(monto)
     with transaction.atomic():
         pedido = pedidos_services.obtener_pedido_bloqueado_por_codigo(codigo)
+        if pedido.total_cerrado_en is None:
+            raise PagoInvalido("El total del pedido todavía no está cerrado.")
         saldo = saldo_pedido(pedido)
         if saldo <= 0:
             raise PagoInvalido("El pedido no tiene saldo pendiente.")

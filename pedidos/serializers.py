@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from .models import Pedido
+from .models import Pedido, ServicioPedido
 
 
 class FiltroPedidosSerializer(serializers.Serializer):
@@ -62,6 +62,7 @@ class PedidoSerializer(serializers.ModelSerializer):
             "costurera_nombre",
             "nota_interna",
             "total",
+            "total_cerrado_en",
             "creado_en",
             "entregado_en",
             "medidas_ultima_toma",
@@ -94,3 +95,31 @@ def serializer_pedido_para(usuario):
     if getattr(usuario, "rol", None) == "costurera":
         return PedidoCostureraSerializer
     return PedidoSerializer
+
+
+class AgregarServicioPedidoSerializer(serializers.Serializer):
+    servicio = serializers.IntegerField(min_value=1)
+    cantidad = serializers.IntegerField(min_value=1, default=1)
+    detalle = serializers.CharField(required=False, allow_blank=True, max_length=200)
+
+
+class ServicioPedidoSerializer(serializers.ModelSerializer):
+    servicio_nombre = serializers.CharField(source="servicio.nombre", read_only=True)
+    subtotal = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ServicioPedido
+        fields = [
+            "id",
+            "servicio",
+            "servicio_nombre",
+            "cantidad",
+            "precio_unitario",
+            "subtotal",
+            "detalle",
+            "creado_en",
+        ]
+        read_only_fields = fields
+
+    def get_subtotal(self, linea) -> str:
+        return f"{linea.precio_unitario * linea.cantidad:.2f}"

@@ -15,4 +15,7 @@ class PedidoAdmin(admin.ModelAdmin):
         "nota_interna",
         "creado_en",
         "entregado_en",
+        "total",
+        "total_cerrado_en",
+        "total_cerrado_por",
     )

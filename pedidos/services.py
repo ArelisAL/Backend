@@ -1,6 +1,7 @@
 """Reglas de pedidos (DERCAS RF-04..08)."""
 
 from datetime import date
+from decimal import Decimal
 
 from django.db import IntegrityError, transaction
 from django.db.models import Q
@@ -165,3 +166,88 @@ def asignar_costurera(pedido: Pedido, costurera) -> Pedido:
     pedido.costurera = costurera
     pedido.save(update_fields=["costurera"])
     return pedido
+
+
+# --- Servicios del pedido y cierre del total (auditoría C1) -----------------
+# Decisión de la cliente (27/11/2026): el precio de cada prenda sale del
+# catálogo de servicios y la recepcionista cierra el total cuando la clienta ya
+# no tiene más prendas que añadir. Supuesto mientras A2.0 no defina impuestos,
+# descuentos ni redondeo: total = suma de cantidad × tarifa, sin ajustes.
+
+
+class TotalYaCerrado(Exception):
+    """El total del pedido ya se cerró y no admite más cambios."""
+
+
+def listar_servicios_pedido(pedido: Pedido):
+    from .models import ServicioPedido
+
+    return ServicioPedido.objects.filter(pedido=pedido).select_related("servicio")
+
+
+def agregar_servicio_pedido(
+    codigo: str, servicio_id: int, cantidad: int, detalle: str, usuario
+):
+    from servicios import services as servicios_services
+
+    from .models import ServicioPedido
+
+    if cantidad < 1:
+        raise DatosPedidoInvalidos("La cantidad debe ser al menos 1.")
+    try:
+        servicio = servicios_services.obtener_servicio(servicio_id)
+    except servicios_services.ServicioNoEncontrado:
+        raise DatosPedidoInvalidos("El servicio no existe en el catálogo.") from None
+    if not servicio.activo:
+        raise DatosPedidoInvalidos("El servicio no está activo en el catálogo.")
+    if servicio.tarifa_base is None:
+        raise DatosPedidoInvalidos(
+            "El servicio no tiene tarifa en el catálogo; pide a la administradora "
+            "que la configure."
+        )
+    with transaction.atomic():
+        pedido = obtener_pedido_bloqueado_por_codigo(codigo)
+        if pedido.total_cerrado_en is not None:
+            raise TotalYaCerrado("El total del pedido ya está cerrado.")
+        return ServicioPedido.objects.create(
+            pedido=pedido,
+            servicio=servicio,
+            cantidad=cantidad,
+            precio_unitario=servicio.tarifa_base,
+            detalle=(detalle or "").strip(),
+            registrado_por=usuario,
+        )
+
+
+def quitar_servicio_pedido(codigo: str, linea_id: int) -> None:
+    from .models import ServicioPedido
+
+    with transaction.atomic():
+        pedido = obtener_pedido_bloqueado_por_codigo(codigo)
+        if pedido.total_cerrado_en is not None:
+            raise TotalYaCerrado("El total del pedido ya está cerrado.")
+        borradas, _ = ServicioPedido.objects.filter(pedido=pedido, pk=linea_id).delete()
+        if not borradas:
+            raise DatosPedidoInvalidos("La prenda no pertenece a este pedido.")
+
+
+def cerrar_total(codigo: str, usuario) -> Pedido:
+    from .models import ServicioPedido
+
+    with transaction.atomic():
+        pedido = obtener_pedido_bloqueado_por_codigo(codigo)
+        if pedido.total_cerrado_en is not None:
+            raise TotalYaCerrado("El total del pedido ya está cerrado.")
+        lineas = list(ServicioPedido.objects.filter(pedido=pedido))
+        if not lineas:
+            raise DatosPedidoInvalidos(
+                "Agrega al menos una prenda del catálogo antes de cerrar el total."
+            )
+        pedido.total = sum(
+            (linea.precio_unitario * linea.cantidad for linea in lineas),
+            start=Decimal("0.00"),
+        )
+        pedido.total_cerrado_en = timezone.now()
+        pedido.total_cerrado_por = usuario
+        pedido.save(update_fields=["total", "total_cerrado_en", "total_cerrado_por"])
+        return pedido

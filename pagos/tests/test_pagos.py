@@ -3,6 +3,7 @@
 from decimal import Decimal
 
 import pytest
+from django.utils import timezone
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from pagos import services
@@ -25,7 +26,13 @@ def datos():
     admin = crear_usuario("admin-pagos@fran-costuras.test", "administradora")
     recepcion = crear_usuario("recepcion-pagos@fran-costuras.test", "recepcionista")
     costurera = crear_usuario("costurera-pagos@fran-costuras.test", "costurera")
-    pedido = crear_pedido("FC-0001", crear_cliente(), catalogo["blusa"], total="50.00")
+    pedido = crear_pedido(
+        "FC-0001",
+        crear_cliente(),
+        catalogo["blusa"],
+        total="50.00",
+        total_cerrado_en=timezone.now(),
+    )
     return {
         "admin": admin,
         "recepcion": recepcion,

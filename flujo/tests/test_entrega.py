@@ -9,6 +9,7 @@ Decisiones de la cliente (27/11/2026):
 from decimal import Decimal
 
 import pytest
+from django.utils import timezone
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from flujo.models import HistorialEstado
@@ -37,7 +38,7 @@ def datos():
     }
 
 
-def _pedido(datos, estado=Pedido.TERMINADO, total="0.00"):
+def _pedido(datos, estado=Pedido.TERMINADO, total="0.00", cerrado=True):
     return crear_pedido(
         "FC-0001",
         datos["cliente"],
@@ -45,6 +46,7 @@ def _pedido(datos, estado=Pedido.TERMINADO, total="0.00"):
         total=total,
         costurera=datos["costurera"],
         estado=estado,
+        total_cerrado_en=timezone.now() if cerrado else None,
     )
 
 
@@ -126,3 +128,13 @@ def test_pago_anulado_no_cuenta_para_entregar(datos):
 def test_administradora_conserva_la_entrega(datos):
     _pedido(datos)
     assert _avanzar(datos["admin"]).status_code == 200
+
+
+def test_entrega_bloqueada_si_el_total_no_esta_cerrado(datos):
+    """C1 + C3: sin total cerrado no se conoce el saldo, así que no se entrega."""
+    _pedido(datos, cerrado=False)
+    respuesta = _avanzar(datos["recepcion"])
+    assert respuesta.status_code == 409
+    assert respuesta.json()["error"] == "saldo_pendiente"
+    assert "Cierra el total" in respuesta.json()["detalle"]
+    assert Pedido.objects.get(codigo="FC-0001").estado == Pedido.TERMINADO

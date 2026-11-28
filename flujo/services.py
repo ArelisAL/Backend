@@ -36,6 +36,10 @@ def cambiar_estado(codigo: str, usuario, confirmar: bool):
                 "La recepcionista solo puede marcar el pedido como entregado."
             )
         if nuevo == "ENTREGADO":
+            if pedido.total_cerrado_en is None:
+                raise EntregaConSaldo(
+                    "Cierra el total del pedido y registra el pago antes de entregar."
+                )
             saldo = pagos_services.saldo_pedido(pedido)
             if saldo > 0:
                 raise EntregaConSaldo(

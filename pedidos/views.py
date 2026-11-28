@@ -12,14 +12,17 @@ from .permissions import (
     EsAdministradoraORecepcionista,
     EsCosturera,
     EsPersonalTaller,
+    EsRecepcionista,
 )
 from .serializers import (
+    AgregarServicioPedidoSerializer,
     CrearPedidoSerializer,
     EditarNotaPedidoSerializer,
     EditarPedidoSerializer,
     FiltroPedidosSerializer,
     PedidoCostureraSerializer,
     PedidoSerializer,
+    ServicioPedidoSerializer,
     serializer_pedido_para,
 )
 
@@ -184,3 +187,106 @@ class PedidoNotaView(APIView):
         except PermissionError as exc:
             return _error("sin_permiso", str(exc), status.HTTP_403_FORBIDDEN)
         return Response(serializer_pedido_para(request.user)(pedido).data)
+
+
+class PedidoServiciosView(APIView):
+    """Prendas del pedido tomadas del catálogo de servicios (auditoría C1)."""
+
+    permission_classes = [EsAdministradoraORecepcionista]
+
+    @extend_schema(responses={200: ServicioPedidoSerializer(many=True)})
+    def get(self, request, codigo: str, *args, **kwargs):
+        try:
+            pedido = services.obtener_pedido_por_codigo(codigo, request.user)
+        except services.PedidoNoEncontrado:
+            return _error(
+                "no_encontrado", "El pedido no existe.", status.HTTP_404_NOT_FOUND
+            )
+        lineas = services.listar_servicios_pedido(pedido)
+        return Response(ServicioPedidoSerializer(lineas, many=True).data)
+
+    @extend_schema(
+        request=AgregarServicioPedidoSerializer,
+        responses={
+            201: ServicioPedidoSerializer,
+            400: OpenApiResponse(description="Servicio inválido o sin tarifa"),
+            403: OpenApiResponse(description="Rol sin permiso"),
+            404: OpenApiResponse(description="Pedido inexistente"),
+            409: OpenApiResponse(description="El total ya está cerrado"),
+        },
+    )
+    def post(self, request, codigo: str, *args, **kwargs):
+        entrada = AgregarServicioPedidoSerializer(data=request.data)
+        entrada.is_valid(raise_exception=True)
+        datos = entrada.validated_data
+        try:
+            linea = services.agregar_servicio_pedido(
+                codigo,
+                datos["servicio"],
+                datos["cantidad"],
+                datos.get("detalle", ""),
+                request.user,
+            )
+        except services.PedidoNoEncontrado:
+            return _error(
+                "no_encontrado", "El pedido no existe.", status.HTTP_404_NOT_FOUND
+            )
+        except services.DatosPedidoInvalidos as exc:
+            return _error("datos_invalidos", str(exc), status.HTTP_400_BAD_REQUEST)
+        except services.TotalYaCerrado as exc:
+            return _error("total_cerrado", str(exc), status.HTTP_409_CONFLICT)
+        return Response(
+            ServicioPedidoSerializer(linea).data, status=status.HTTP_201_CREATED
+        )
+
+
+class PedidoServicioDetalleView(APIView):
+    permission_classes = [EsAdministradoraORecepcionista]
+
+    @extend_schema(
+        responses={
+            204: OpenApiResponse(description="Prenda quitada del pedido"),
+            400: OpenApiResponse(description="La prenda no es de este pedido"),
+            404: OpenApiResponse(description="Pedido inexistente"),
+            409: OpenApiResponse(description="El total ya está cerrado"),
+        },
+    )
+    def delete(self, request, codigo: str, linea_id: int, *args, **kwargs):
+        try:
+            services.quitar_servicio_pedido(codigo, linea_id)
+        except services.PedidoNoEncontrado:
+            return _error(
+                "no_encontrado", "El pedido no existe.", status.HTTP_404_NOT_FOUND
+            )
+        except services.DatosPedidoInvalidos as exc:
+            return _error("datos_invalidos", str(exc), status.HTTP_400_BAD_REQUEST)
+        except services.TotalYaCerrado as exc:
+            return _error("total_cerrado", str(exc), status.HTTP_409_CONFLICT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class PedidoCerrarTotalView(APIView):
+    permission_classes = [EsRecepcionista]
+
+    @extend_schema(
+        request=None,
+        responses={
+            200: PedidoSerializer,
+            400: OpenApiResponse(description="El pedido no tiene prendas"),
+            403: OpenApiResponse(description="Solo recepcionista"),
+            404: OpenApiResponse(description="Pedido inexistente"),
+            409: OpenApiResponse(description="El total ya está cerrado"),
+        },
+    )
+    def post(self, request, codigo: str, *args, **kwargs):
+        try:
+            pedido = services.cerrar_total(codigo, request.user)
+        except services.PedidoNoEncontrado:
+            return _error(
+                "no_encontrado", "El pedido no existe.", status.HTTP_404_NOT_FOUND
+            )
+        except services.DatosPedidoInvalidos as exc:
+            return _error("datos_invalidos", str(exc), status.HTTP_400_BAD_REQUEST)
+        except services.TotalYaCerrado as exc:
+            return _error("total_cerrado", str(exc), status.HTTP_409_CONFLICT)
+        return Response(PedidoSerializer(pedido).data)
