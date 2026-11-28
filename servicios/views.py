@@ -7,11 +7,12 @@ from rest_framework.settings import api_settings
 from rest_framework.views import APIView
 
 from . import services
-from .permissions import EsAdministradora
+from .permissions import EsAdministradora, EsAdministradoraORecepcionista
 from .serializers import (
     HistorialServicioSerializer,
     PaginaHistorialServicioSerializer,
     PaginaServicioSerializer,
+    ServicioCotizableSerializer,
     ServicioSerializer,
 )
 
@@ -112,3 +113,21 @@ class ServicioHistorialView(APIView):
         except services.ServicioNoEncontrado:
             return _error("no_encontrado", "El servicio no existe.", 404)
         return _pagina(historial, request, self, HistorialServicioSerializer)
+
+
+class ServicioCotizableListView(APIView):
+    """Lectura para recepción: servicios activos con tarifa (sin datos internos)."""
+
+    permission_classes = [EsAdministradoraORecepcionista]
+
+    @extend_schema(
+        operation_id="servicios_cotizables",
+        responses={200: ServicioCotizableSerializer(many=True)},
+    )
+    def get(self, request, *args, **kwargs):
+        return _pagina(
+            services.listar_servicios_cotizables(),
+            request,
+            self,
+            ServicioCotizableSerializer,
+        )

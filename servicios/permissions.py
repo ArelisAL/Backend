@@ -11,3 +11,14 @@ class EsAdministradora(BasePermission):
             request.user.is_authenticated
             and getattr(request.user, "rol", None) == "administradora"
         )
+
+
+class EsAdministradoraORecepcionista(BasePermission):
+    message = "Solo administradora o recepcionista pueden consultar las tarifas."
+
+    def has_permission(self, request, view):
+        return bool(
+            request.user.is_authenticated
+            and getattr(request.user, "rol", None)
+            in {"administradora", "recepcionista"}
+        )

@@ -186,3 +186,23 @@ def test_abono_exige_total_cerrado_y_luego_respeta_saldo(datos):
         api.post(f"{BASE}/pagos/", {"monto": "5.00"}, format="json").status_code == 201
     )
     assert Pago.objects.count() == 1
+
+
+def test_recepcion_lista_solo_servicios_cotizables(datos):
+    respuesta = _api(datos["recepcion"]).get("/api/v1/servicios/cotizables/")
+    assert respuesta.status_code == 200
+    codigos = [s["codigo"] for s in respuesta.json()["results"]]
+    assert codigos == ["basta", "vestido"]
+    assert set(respuesta.json()["results"][0]) == {
+        "id",
+        "codigo",
+        "nombre",
+        "categoria",
+        "unidad",
+        "tarifa_base",
+    }
+    assert (
+        _api(datos["costurera"]).get("/api/v1/servicios/cotizables/").status_code == 403
+    )
+    # El catálogo completo sigue siendo solo de la administradora.
+    assert _api(datos["recepcion"]).get("/api/v1/servicios/").status_code == 403

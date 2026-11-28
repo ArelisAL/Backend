@@ -57,3 +57,10 @@ class PaginaHistorialServicioSerializer(serializers.Serializer):
     next = serializers.CharField(allow_null=True)
     previous = serializers.CharField(allow_null=True)
     results = HistorialServicioSerializer(many=True)
+
+
+class ServicioCotizableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Servicio
+        fields = ["id", "codigo", "nombre", "categoria", "unidad", "tarifa_base"]
+        read_only_fields = fields

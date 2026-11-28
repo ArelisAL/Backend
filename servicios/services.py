@@ -104,6 +104,11 @@ def listar_servicios():
     return Servicio.objects.all()
 
 
+def listar_servicios_cotizables():
+    """Servicios activos con tarifa: los únicos que se pueden agregar a un pedido."""
+    return Servicio.objects.filter(activo=True, tarifa_base__isnull=False)
+
+
 def obtener_servicio(servicio_id):
     servicio = Servicio.objects.filter(pk=servicio_id).first()
     if servicio is None:
